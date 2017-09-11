@@ -1,11 +1,14 @@
 package pkgCore;
 
-public class Die {
+import java.util.Random;
 
+public class Die {
+	
 	private int DieValue;
 
 	public Die() {
-		// TODO: Determine DieVaue.. a random number between 1 and 6
+		Random r = new Random();
+		DieValue = r.nextInt(6)+1;
 	}
 
 	public int getDieValue() {
