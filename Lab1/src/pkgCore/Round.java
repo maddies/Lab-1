@@ -7,11 +7,11 @@ public class Round {
 	private int ComeOutScore;
 	private eGameResult eGameResult;
 	private LinkedList<Roll> rolls = new LinkedList<Roll>();
-	
+
 	private Roll ComeOutRoll; // created
 
 	public Round() {
-				
+
 		int ComeOutScore = ComeOutRoll.getScore();
 
 		switch (ComeOutScore) {
@@ -21,11 +21,13 @@ public class Round {
 		case 12:
 			eGameResult = eGameResult.CRAPS;
 			rolls.add(ComeOutRoll);
-
+			break;
+			
 		case 7:
 		case 11:
 			eGameResult = eGameResult.NATURAL;
 			rolls.add(ComeOutRoll);
+			break;
 
 		default:
 			rolls.add(ComeOutRoll);
@@ -44,9 +46,9 @@ public class Round {
 				eGameResult = eGameResult.SEVEN_OUT;
 			}
 		}
-	}		
+	}
 
-	public int RollCount() {	
+	public int RollCount() {
 		return rolls.size();
 	}
 
